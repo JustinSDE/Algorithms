@@ -3,6 +3,7 @@ import matplotlib.patches as patches
 
 
 class DeliveryPlanner:
+    ## details erased purposely to avoid leak of course materials
     def __init__(self, warehouse, todo):
         pass
     def plan_delivery(self):
