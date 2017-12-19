@@ -1,2 +1,3 @@
 # Algorithms
-Different Algorithms, from super easy to super hard ones, from general to specialized
+Different Algorithms, from easy to hard, from general to specialized
+Programming Languages: C++, Python
