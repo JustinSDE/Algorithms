@@ -1,3 +1,6 @@
 watch demo here:
 https://youtu.be/yu4XYj_R5pk
 Python 3.6 64bit, windows 10 64bit using PyCharm 2017.3 with numpy and matplotlib installed
+
+Problem description:
+In this project, a robot was born in a continuous world. The goal is to return moves that can let the robot deliver all the boxes in the world to the drop zone with the <strong>lowest</strong> cost. The robot is a circle with 0.25 radius while the boxes are 0.2*0.2 square.The robot is able to pick up any box that is within 0.5 from its center. The robot is able to put down the box to a designated position as long as it is within 0.5 from its center.The robot can only carry one box. If crashes, the game is over (including crash with walls, or boxes). The robot was born with a bearing angle of 0.0, the moves of the robot should be in the form of bearing and distance, which suggests that for each move, the robot first makes a turn of the bearing and the move the given distance. If the bearing or the distance is larger than the maximum turning angle and moving distance of the robot for a step, the robot will only turn the max angle and move in the direction with the max distance. The cost of each move is 1 plus the distance the robot moves. Both the map of the world and the location of boxes are given. (note, boxes are not always at the center of grids, it might sit at corners close to walls and so on)
