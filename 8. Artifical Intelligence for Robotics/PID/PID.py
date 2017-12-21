@@ -22,8 +22,8 @@ class Heater:
 
     def getTemperature(self, inputpower):
         self.temperature += self.parampower * inputpower - self.paramcoolrate * (
-                self.temperature - self.roomtemperature + \
-                0.5 * math.sqrt(abs(self.temperature - self.roomtemperature)))
+            self.temperature - self.roomtemperature +
+            0.5 * math.sqrt(abs(self.temperature - self.roomtemperature)))
         return self.temperature
 
 
@@ -40,7 +40,8 @@ class PIDController:
         diff_change = diff - self.prev_diff
         self.prev_diff = diff
         self.accum_i += diff
-        power = -self.param_p * diff - self.param_d * diff_change - self.param_i * self.accum_i
+        power = -self.param_p * diff - self.param_d * \
+            diff_change - self.param_i * self.accum_i
         if power < 0:
             power = 0
         return power
@@ -77,7 +78,8 @@ if __name__ == "__main__":
         cur_temp = env.getTemperature(inputpower)
         temperature.append(cur_temp)
         inputpower = agent.getpower(cur_temp, target_temp)
-    plt.plot([0, EPISODENUM], [target_temp, target_temp], label='target temperature')
+    plt.plot([0, EPISODENUM], [target_temp, target_temp],
+             label='target temperature')
     plt.plot(time, temperature, label='measured temperature')
     plt.title("PID controller: {}, {}, {}".format(param_p, param_i, param_d))
     plt.xlabel('time')
@@ -100,7 +102,8 @@ if __name__ == "__main__":
         cur_temp = env.getTemperature(inputpower)
         temperature.append(cur_temp)
         inputpower = agent.getpower(cur_temp, target_temp)
-    plt.plot([0, EPISODENUM], [target_temp, target_temp], label='target temperature')
+    plt.plot([0, EPISODENUM], [target_temp, target_temp],
+             label='target temperature')
     plt.plot(time, temperature, label='measured temperature')
     plt.title("PID controller: {}, {}, {}".format(param_p, param_i, param_d))
     plt.xlabel('time')
@@ -123,7 +126,8 @@ if __name__ == "__main__":
         cur_temp = env.getTemperature(inputpower)
         temperature.append(cur_temp)
         inputpower = agent.getpower(cur_temp, target_temp)
-    plt.plot([0, EPISODENUM], [target_temp, target_temp], label='target temperature')
+    plt.plot([0, EPISODENUM], [target_temp, target_temp],
+             label='target temperature')
     plt.plot(time, temperature, label='measured temperature')
     plt.title("PID controller: {}, {}, {}".format(param_p, param_i, param_d))
     plt.xlabel('time')
@@ -146,7 +150,8 @@ if __name__ == "__main__":
         cur_temp = env.getTemperature(inputpower)
         temperature.append(cur_temp)
         inputpower = agent.getpower(cur_temp, target_temp)
-    plt.plot([0, EPISODENUM], [target_temp, target_temp], label='target temperature')
+    plt.plot([0, EPISODENUM], [target_temp, target_temp],
+             label='target temperature')
     plt.plot(time, temperature, label='measured temperature')
     plt.title("PID controller: {}, {}, {}".format(param_p, param_i, param_d))
     plt.xlabel('time')
@@ -170,7 +175,8 @@ if __name__ == "__main__":
         temperature.append(cur_temp)
         inputpower = agent.getpower(cur_temp, target_temp)
 
-    plt.plot([0, EPISODENUM], [target_temp, target_temp], label='target temperature')
+    plt.plot([0, EPISODENUM], [target_temp, target_temp],
+             label='target temperature')
     plt.plot(time, temperature, label='measured temperature')
     plt.title("PID controller: {}, {}, {}".format(param_p, param_i, param_d))
     plt.xlabel('time')
@@ -194,7 +200,8 @@ if __name__ == "__main__":
         temperature.append(cur_temp)
         inputpower = agent.getpower(cur_temp, target_temp)
 
-    plt.plot([0, EPISODENUM], [target_temp, target_temp], label='target temperature')
+    plt.plot([0, EPISODENUM], [target_temp, target_temp],
+             label='target temperature')
     plt.plot(time, temperature, label='measured temperature')
     plt.title("PID controller: {}, {}, {}".format(param_p, param_i, param_d))
     plt.xlabel('time')
@@ -218,7 +225,8 @@ if __name__ == "__main__":
         temperature.append(cur_temp)
         inputpower = agent.getpower(cur_temp, target_temp)
 
-    plt.plot([0, EPISODENUM], [target_temp, target_temp], label='target temperature')
+    plt.plot([0, EPISODENUM], [target_temp, target_temp],
+             label='target temperature')
     plt.plot(time, temperature, label='measured temperature')
     plt.title("PID controller: {}, {}, {}".format(param_p, param_i, param_d))
     plt.xlabel('time')
@@ -267,7 +275,8 @@ if __name__ == "__main__":
     plt.legend()
     plt.xlabel('time')
     plt.ylabel('Temperature')
-    plt.title("Programming temperature control using PID: {}, {}, {}".format(param_p, param_i, param_d))
+    plt.title("Programming temperature control using PID: {}, {}, {}".format(
+        param_p, param_i, param_d))
     a = fig.add_subplot(313, fc='none')
     plt.plot(time, output_power, 'r', lw=0.5, label='power')
     a.yaxis.tick_right()
