@@ -3,6 +3,6 @@ The lunar lander environment consistis of a 8-dimensional continuous state space
 
 Since the state space is continuous, tabular Q table method wouldn't work. To solve this, a deep Q network (DQN) was implemented. The general idea is that, the rewards from an action at specific states are simulated by a neural network. To break down the correlation between similar states, which will cause the learning of NN biased, a relay buffer is employed. Basically, a large relay buffer is used to save the most recently visited state, action pair and corresponding rewards. A small amount of data are sampled from the buffer and used to train the neural network. <br>
 
-Becuase this problem could be used as assignment for some courses, the implementation of this problem is not shown. However, a similar solution is provided on a cart-pole problem, which is similar to the lunar lander problem. The source code can be found here [(source code)](./DQN-CartPole).<br>
+Becuase this problem could be used as assignment for some courses, the implementation of this problem is not shown. However, a similar solution is provided on a cart-pole problem, which is similar to the lunar lander problem. The source code can be found here [(source code)](./DQN-CartPole.py).<br>
 
 A demo of a trained agent on the lunar lander environment can be found here: https://youtu.be/5kcSx_iXa3o
