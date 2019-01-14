@@ -3,7 +3,7 @@ public:
 	void findpermutation(vector<vector<int>> &res, vector<int> input, int start,
 			     int sz) {
 	    if (start == sz - 1) {
-		res.push_back(input);
+		res.push_back(move(input));
 		return;
 	    }
 	    for (int i = start; i < sz; i++) {
