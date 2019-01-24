@@ -64,10 +64,8 @@ class Solution2 {
             }
 
             // condition for left = mid +1;
-            if (left_val <= mid_val && target > mid_val ||
-                target < left_val && left_val <= mid_val &&
-                    mid_val > right_val ||
-                target > mid_val && target < left_val)
+            if ( target > mid_val && (left_val <= mid_val ||target < left_val) ||
+                target < left_val && left_val <= mid_val && mid_val > right_val )
                 left = mid + 1;
             else
                 right = mid - 1;
